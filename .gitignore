@@ -1,0 +1,32 @@
+# Compiled executables
+battleship_solver
+battleship_solver.exe
+*.exe
+*.out
+
+# C++ build artifacts
+*.o
+*.obj
+*.a
+*.lib
+*.so
+*.dll
+*.dylib
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Test files
+test_*.txt
