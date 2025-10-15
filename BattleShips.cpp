@@ -31,10 +31,9 @@ struct Puzzle {
         col_targets.clear();
         board.clear();
         
-        // Read column targets
+        // Read column targets from same line
         string line;
-        getline(cin, line); // consume rest of line
-        getline(cin, line);
+        getline(cin, line); // Get rest of first line (column targets)
         istringstream iss(line);
         int val;
         while (iss >> val) {

@@ -91,13 +91,23 @@ SOLUTIONS: <count>
 
 **Example:**
 ```bash
-echo "4
--1 2 1 1 2 1
-2 -1 -1 -1 -1 -1
-1 -1 -1 -1 -1 -1
-1 -1 -1 -1 -1 -1
-2 -1 -1 -1 -1 -1
-1 -1 -1 -1 -1 -1" | ./battleship_solver
+# example_easy.txt contains a 4x4 puzzle with two single-cell ships
+cat example_easy.txt | ./battleship_solver
+```
+
+This will output:
+```
+SOLUTIONS: 2
+--- Solution 1 ---
+0 0 1 0
+1 0 0 0
+0 0 0 0
+0 0 0 0
+--- Solution 2 ---
+1 0 0 0
+0 0 1 0
+0 0 0 0
+0 0 0 0
 ```
 
 ## Puzzle Rules
@@ -108,6 +118,20 @@ BattleShips is a logic puzzle where you must place ships on a grid according to 
 2. Ships are rectangular (1xN or Nx1)
 3. Ships cannot touch each other, even diagonally
 4. Maximum ship length is K (typically 4)
+
+## Creating Valid Puzzles
+
+When creating puzzles, keep in mind:
+- The sum of all row targets must equal the sum of all column targets (total ship cells)
+- With the diagonal constraint, placing ships can be challenging
+- Start with simple configurations (single-cell ships separated by empty rows/columns)
+- Use the UI to experiment and visualize placements
+
+**Example Valid Puzzle (4x4 with two single ships):**
+```
+K=2, Row targets=[1,1,0,0], Column targets=[1,0,1,0]
+Valid solutions exist at positions (0,0)+(1,2) or (0,2)+(1,0)
+```
 
 ## Development
 
