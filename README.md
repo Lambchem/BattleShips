@@ -135,14 +135,48 @@ Valid solutions exist at positions (0,0)+(1,2) or (0,2)+(1,0)
 
 ## Development
 
+### Provided Examples
+
+The repository includes example puzzle files to help you get started:
+
+1. **example_easy.txt** - Simple 4x4 puzzle with two single-cell ships
+   - K=2, Row targets=[1,1,0,0], Column targets=[1,0,1,0]
+   - Has 2 solutions
+   
+2. **example_ships.txt** - 6x6 puzzle with multiple single-cell ships
+   - K=4, Row targets=[2,0,2,0,2,0], Column targets=[2,0,2,0,2,0]
+   - Has 6 solutions demonstrating various valid placements
+
+Try them with:
+```bash
+./battleship_solver < example_easy.txt
+./battleship_solver < example_ships.txt
+```
+
 ### Project Structure
 ```
 BattleShips/
 ├── BattleShips.cpp      # C++ solver engine
 ├── BattleShipsUI.py     # Python GUI
+├── example_easy.txt     # Simple 4x4 example puzzle
+├── example_ships.txt    # 6x6 example with multiple ships
 ├── README.md            # This file
 ├── LICENSE              # GPL-3.0 License
 └── .gitignore           # Git ignore rules
+```
+
+### Building and Testing
+
+```bash
+# Compile the solver
+g++ -std=c++17 -O2 -o battleship_solver BattleShips.cpp
+
+# Run tests with examples
+./battleship_solver < example_easy.txt
+./battleship_solver < example_ships.txt
+
+# Test the Python UI (requires tkinter)
+python3 BattleShipsUI.py
 ```
 
 ### Contributing
